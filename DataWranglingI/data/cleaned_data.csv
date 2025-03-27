@@ -520,7 +520,6 @@
 519,519,21,little,1647,car,1.0,male,kaggle,,own,bad,40,391779.0,182
 520,520,15,,1433,furniture/equipment,2.0,female,kaggle,little,rent,good,25,391779.0,985
 521,521,24,little,1024,radio/TV,2.0,male,kaggle,little,own,bad,48,391779.0,289
-522,522,15,little,950,car,2.0,353546,kaggle,little,rent,bad,33,391779.0,170
 523,523,36,moderate,9857,business,1.0,male,kaggle,moderate,own,good,31,391779.0,684
 524,524,18,moderate,1042,car,2.0,female,kaggle,,own,bad,33,391779.0,419
 525,525,16,moderate,1175,car,0.0,male,kaggle,little,free,good,68,391779.0,187
@@ -1139,7 +1138,6 @@
 1145,1145,12,little,2214,radio/TV,1.0,male,kaggle,little,own,good,24,391779.0,762
 1146,1146,24,moderate,1743,radio/TV,1.0,male,kaggle,little,own,good,48,391779.0,989
 1147,1147,15,moderate,2326,business,2.0,male,kaggle,quite rich,own,good,27,391779.0,388
-1148,1148,24,little,1823,radio/TV,3.0,male,kaggle,little,own,36,30,391779.0,235
 1149,1149,15,rich,1271,radio/TV,2.0,male,kaggle,,free,bad,39,391779.0,757
 1150,1150,24,,1533,radio/TV,2.0,female,kaggle,little,own,good,38,391779.0,267
 1151,1151,12,,1592,furniture/equipment,2.0,female,kaggle,rich,own,good,35,391779.0,897
@@ -1357,7 +1355,6 @@
 1364,1364,12,little,1289,furniture/equipment,1.0,male,kaggle,little,own,good,21,391779.0,587
 1365,1365,6,little,428,furniture/equipment,2.0,female,kaggle,little,own,good,49,391779.0,750
 1366,1366,48,,10222,radio/TV,2.0,male,kaggle,,own,good,37,391779.0,657
-1367,1367,4,,1544,radio/TV,1.0,male,kaggle,little,own,5,42,391779.0,234
 1368,1368,8,moderate,760,radio/TV,1.0,female,kaggle,little,own,good,44,391779.0,732
 1369,1369,30,rich,3017,radio/TV,2.0,male,kaggle,little,own,good,47,391779.0,669
 1370,1370,12,,1555,repairs,2.0,male,kaggle,rich,free,bad,55,391779.0,754
@@ -2432,7 +2429,6 @@
 2442,2442,21,little,1647,car,1.0,male,kaggle,,own,bad,40,391779.0,182
 2443,2443,15,,1433,furniture/equipment,2.0,female,kaggle,little,rent,good,25,391779.0,985
 2444,2444,24,little,1024,radio/TV,2.0,male,kaggle,little,own,bad,48,391779.0,289
-2445,2445,15,little,950,car,2.0,353546,kaggle,little,rent,bad,33,391779.0,170
 2446,2446,36,moderate,9857,business,1.0,male,kaggle,moderate,own,good,31,391779.0,684
 2447,2447,18,moderate,1042,car,2.0,female,kaggle,,own,bad,33,391779.0,419
 2448,2448,16,moderate,1175,car,0.0,male,kaggle,little,free,good,68,391779.0,187
@@ -3051,7 +3047,6 @@
 3068,3068,12,little,2214,radio/TV,1.0,male,kaggle,little,own,good,24,391779.0,762
 3069,3069,24,moderate,1743,radio/TV,1.0,male,kaggle,little,own,good,48,391779.0,989
 3070,3070,15,moderate,2326,business,2.0,male,kaggle,quite rich,own,good,27,391779.0,388
-3071,3071,24,little,1823,radio/TV,3.0,male,kaggle,little,own,36,30,391779.0,235
 3072,3072,15,rich,1271,radio/TV,2.0,male,kaggle,,free,bad,39,391779.0,757
 3073,3073,24,,1533,radio/TV,2.0,female,kaggle,little,own,good,38,391779.0,267
 3074,3074,12,,1592,furniture/equipment,2.0,female,kaggle,rich,own,good,35,391779.0,897
@@ -3269,7 +3264,6 @@
 3287,3287,12,little,1289,furniture/equipment,1.0,male,kaggle,little,own,good,21,391779.0,587
 3288,3288,6,little,428,furniture/equipment,2.0,female,kaggle,little,own,good,49,391779.0,750
 3289,3289,48,,10222,radio/TV,2.0,male,kaggle,,own,good,37,391779.0,657
-3290,3290,4,,1544,radio/TV,1.0,male,kaggle,little,own,5,42,391779.0,234
 3291,3291,8,moderate,760,radio/TV,1.0,female,kaggle,little,own,good,44,391779.0,732
 3292,3292,30,rich,3017,radio/TV,2.0,male,kaggle,little,own,good,47,391779.0,669
 3293,3293,12,,1555,repairs,2.0,male,kaggle,rich,free,bad,55,391779.0,754
@@ -4423,7 +4417,6 @@
 4447,4447,21,,2993,car,1.0,male,kaggle,little,own,good,28,391779.0,841
 4448,4448,15,,874,domestic appliances,2.0,female,kaggle,,own,good,24,391779.0,873
 4449,4449,18,little,3509,radio/TV,2.0,female,kaggle,little,own,good,25,391779.0,777
-4450,4450,15,little,950,car,2.0,353546,kaggle,little,rent,bad,33,391779.0,170
 4451,4451,,,7980,,2.0,male,kaggle,,rent,bad,27,391779.0,645
 4452,4452,12,moderate,,car,2.0,male,kaggle,,own,good,44,391779.0,23
 4453,4453,24,,3757,car,2.0,female,kaggle,little,free,good,62,391779.0,487
