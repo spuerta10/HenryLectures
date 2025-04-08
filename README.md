@@ -1,4 +1,5 @@
-![Henry logo](https://coursereport-s3-production.global.ssl.fastly.net/uploads/school/logo/1185/original/HENRY_logo.jpg)
+<img src="https://coursereport-s3-production.global.ssl.fastly.net/uploads/school/logo/1185/original/HENRY_logo.jpg" alt="Descripción" width="100%" height="260"/>
+
 
 # Acerca de
 Bienvenidos a `Henry Lectures`, en este repositorio se encuentran fragmentos de codigo y contenido usados para las clases del **Bootcamp** de **Data Engineering** de [Henry](https://www.soyhenry.com/).
