@@ -1,4 +1,4 @@
-<img src="https://coursereport-s3-production.global.ssl.fastly.net/uploads/school/logo/1185/original/HENRY_logo.jpg" alt="Descripción" width="100%" height="260"/>
+<img src="https://coursereport-s3-production.global.ssl.fastly.net/uploads/school/logo/1185/original/HENRY_logo.jpg" alt="Descripción" width="100%" height="400"/>
 
 
 # Acerca de
