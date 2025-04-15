@@ -49,8 +49,35 @@ ORDER BY YEAR_ID, MONTH_ID;
 - Cálculo final: Compara ventas del mes actual con el mes anterior.
 */
 
+-- Usando la función LEAD() para obtener las ventas del siguiente mes para cada fila. Mostrar las ventas actuales y las del mes siguiente lado a lado.
+
+WITH ventas_mensuales AS (
+    SELECT 
+        YEAR_ID,
+        MONTH_ID,
+        SUM(SALES) AS total_sales
+    FROM sales
+    GROUP BY YEAR_ID, MONTH_ID
+),
+ventas_con_lead AS (
+    SELECT 
+        YEAR_ID,
+        MONTH_ID,
+        total_sales,
+        LEAD(total_sales) OVER (PARTITION BY YEAR_ID ORDER BY MONTH_ID) AS ventas_mes_siguiente
+    FROM ventas_mensuales
+)
+SELECT 
+    YEAR_ID,
+    MONTH_ID,
+    total_sales,
+    ventas_mes_siguiente
+FROM ventas_con_lead
+ORDER BY YEAR_ID, MONTH_ID;
+
 /*
-PSS.. Como tarea, puedes intentar:
-- Usar la función LEAD() para obtener las ventas del siguiente mes para cada fila. 
-Mostrar las ventas actuales y las del mes siguiente lado a lado.
+¿Qué hace este query?
+- ventas_mensuales: resume las ventas por año y mes.
+- ventas_con_lead: usa la función LEAD() para obtener las ventas del mes siguiente sin perder la fila actual.
+- En el SELECT final se muestran las ventas actuales y las del mes siguiente, para facilitar comparaciones.
 */
