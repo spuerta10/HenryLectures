@@ -1,7 +1,7 @@
 from typing import ClassVar
 
 from os.path import abspath, exists
-from sqlite3 import connect, Connection, Cursor
+from sqlite3 import connect
 
 from src.model.log_entry import LogEntry
 
