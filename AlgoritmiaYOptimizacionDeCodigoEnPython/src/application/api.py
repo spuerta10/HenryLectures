@@ -141,21 +141,44 @@ class API:
     ) -> JSONResponse:
         """Obtiene logs dentro de un rango temporal específico.
 
+        Este método:
+        1. Busca primero en el cache temporal
+        2. Si no encuentra logs en cache, busca en la base de datos
+        3. Convierte los logs encontrados a formato JSON
+
         Args:
-            start_time (datetime): Inicio del rango temporal (ISO format)
-            end_time (datetime): Fin del rango temporal (ISO format)
+            start_time (datetime): Inicio del rango temporal en formato ISO (YYYY-MM-DDTHH:MM:SS)
+            end_time (datetime): Fin del rango temporal en formato ISO (YYYY-MM-DDTHH:MM:SS)
 
         Returns:
-            JSONResponse: Lista de logs en el rango especificado
+            JSONResponse: Respuesta HTTP con:
+                - content: {"logs": [lista de logs encontrados]}
+                - media_type: "application/json"
+                - status_code: 200
 
         Example:
             GET /logs?start_time=2023-04-23T10:00:00&end_time=2023-04-23T10:05:00
+            
+            Response:
+            {
+                "logs": [
+                    {
+                        "timestamp": "2023-04-23T10:00:00",
+                        "tag": "INFO",
+                        "message": "Test log"
+                    }
+                ]
+            }
         """
-        logs: list[LogEntry] = [
+        cache_logs: list[LogEntry] = self.__cache.get_logs(start_time, end_time)
+        overall_logs: list[LogEntry] = self.__db_service.get_logs(start_time, end_time) \
+            if not cache_logs else cache_logs  # buscamos en la base de datos si no estan en el cache
+        jsonable_logs: list[dict] = [
             jsonable_encoder(log.model_dump() )
-            for log in self.__cache.get_logs(start_time, end_time)
+            for log in overall_logs
         ]
-        return JSONResponse(content={"logs": logs}, media_type="application/json", status_code=200)
+        
+        return JSONResponse(content={"logs": jsonable_logs}, media_type="application/json", status_code=200)
     
     async def get_all_logs(self) -> JSONResponse:
         """Obtiene todos los logs almacenados en el cache temporal.

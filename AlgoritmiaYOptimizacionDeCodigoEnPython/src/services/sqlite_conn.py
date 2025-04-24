@@ -1,7 +1,9 @@
 from typing import ClassVar
+from datetime import datetime
+from functools import lru_cache
 
 from os.path import abspath, exists
-from sqlite3 import connect
+from sqlite3 import connect, Cursor
 
 from src.model.log_entry import LogEntry
 
@@ -13,6 +15,14 @@ class SQliteConn:
         tag TEXT NOT NULL,
         message TEXT NOT NULL
     )
+    """
+    GET_LOGS_QUERY: ClassVar[str] = """
+    SELECT 
+        timestamp, tag, message 
+    FROM 
+        {}
+    WHERE 
+        timestamp BETWEEN ? AND ?;
     """
     
     def __init__(self, db_path: str, logs_table: str = "logs"):
@@ -85,5 +95,28 @@ class SQliteConn:
                 conn.rollback()
                 raise ConnectionError(f"Error saving logs to database: {e}") from e
             
-    def get_logs(self, start_time: str, end_time: str) -> list[LogEntry]: ...
+    @lru_cache(maxsize=50)  # agregamos cache a las consultas a la base de datos. 
+    def get_logs(self, start_time: datetime, end_time: datetime) -> list[LogEntry]:
+        """Recupera logs dentro de un rango de tiempo específico.
+
+        Args:
+            start_time (str): Timestamp inicial en formato ISO (YYYY-MM-DDTHH:MM:SS)
+            end_time (str): Timestamp final en formato ISO (YYYY-MM-DDTHH:MM:SS)
+
+        Returns:
+            list[LogEntry]: Lista de logs encontrados en el rango especificado
+
+        Raises:
+            ConnectionError: Si ocurre un error durante la consulta a la base de datos
+        """
+        
+        print(f"Searching in DB from {start_time} to {end_time}")
+        
+        with connect(self.__db_path) as conn:
+            try:
+                cursor: Cursor = conn.execute(self.GET_LOGS_QUERY.format(self.__logs_table), (start_time.isoformat(), end_time.isoformat()))
+                logs: list[LogEntry] = [LogEntry.from_db_row(row) for row in cursor] 
+                return logs
+            except Exception as e:
+                raise ConnectionError(f"Error retrieving logs from database: {e}") from e
     

@@ -39,5 +39,35 @@ class LogEntry(BaseModel):
         assert isinstance(other, LogEntry), NotImplemented
         return self.timestamp < other.timestamp
     
+    @staticmethod
+    def from_db_row(row: tuple) -> 'LogEntry':
+        """Crea una instancia de LogEntry desde una tupla de la base de datos.
+    
+        Este método estático convierte una fila de la base de datos en un objeto LogEntry,
+        esperando los campos en el siguiente orden:
+        - row[0]: timestamp en formato ISO (YYYY-MM-DDTHH:MM:SS)
+        - row[1]: tag del log (e.g., "INFO", "ERROR")
+        - row[2]: mensaje del log
+        
+        Args:
+            row (tuple): Tupla con los datos del log desde la base de datos
+            
+        Returns:
+            LogEntry: Nueva instancia de LogEntry con los datos de la fila
+            
+        Example:
+            db_row = ("2023-04-23T10:00:00", "INFO", "Test message")
+            log = LogEntry.from_db_row(db_row)
+            
+        Note:
+            El timestamp debe estar en formato ISO para poder ser parseado correctamente
+            por datetime.fromisoformat()
+        """
+        return LogEntry(
+            timestamp=datetime.fromisoformat(row[0]),
+            tag=row[1],
+            message=row[2]
+        )
+    
     class Config:
         frozen = True
