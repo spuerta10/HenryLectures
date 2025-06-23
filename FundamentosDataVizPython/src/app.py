@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
     tab1, tab2 = st.tabs(["🔍 Visión General", "🏙️ Vista Ciudad"])
 
-    PATH: str = "FundamentosDataVizPython/data/planeta_salud_wellbeing_dataset.csv"
+    PATH: str = "FundamentosDataVizPython/data/planeta_salud_wellbeing_dataset.csv"  # this path as is will be recognized by Streamlit Cloud
     data: pd.DataFrame = pd.read_csv(PATH)
     
     with tab1:

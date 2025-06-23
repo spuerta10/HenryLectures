@@ -1,3 +1,6 @@
+"""This requirements file is intended for the Streamlit app 
+and later being able to upload it to Streamlit Cloud"""
+
 seaborn==0.13.2
 matplotlib==3.9.2
 matplotlib-inline==0.1.6
