@@ -5,6 +5,10 @@ Para ejecutar este modulo corre el comando python{version} -m streamlit run app.
 En caso de que tu version de python sea la 3.10, este seria el comando:
 python3.10 -m streamlit run app.py
 """
+import subprocess, sys
+
+subprocess.check_call([sys.executable, "-m", "pip", "install", "plotly"])
+
 
 import streamlit as st
 from tabs import general_view, city_view
