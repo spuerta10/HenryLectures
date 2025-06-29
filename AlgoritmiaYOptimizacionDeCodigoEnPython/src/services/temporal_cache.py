@@ -1,15 +1,17 @@
-from sortedcontainers import SortedDict
 from datetime import datetime
+
+from sortedcontainers import SortedDict
 
 from src.model.log_entry import LogEntry
 from src.services.log_pruner import LogPruner
+
 
 class TemporalCache:
     def __init__(self, pruner: LogPruner):
         self.__pruner: LogPruner = pruner
         self.__cache: SortedDict = SortedDict()
-        
-    def add_log(self, log_entry: LogEntry) -> 'TemporalCache': 
+
+    def add_log(self, log_entry: LogEntry) -> "TemporalCache":
         """Añade un nuevo log al cache temporal.
 
         Este método:
@@ -29,12 +31,12 @@ class TemporalCache:
         """
         timestamp: datetime = log_entry.timestamp
         self.__pruner.register_timestamp(timestamp)
-        
+
         if timestamp not in self.__cache:
             self.__cache[timestamp] = list()
         self.__cache[timestamp].append(log_entry)
         return self
-    
+
     def get_logs(self, start_time: datetime, end_time: datetime) -> list[LogEntry]:
         """Obtiene logs dentro de un rango temporal específico.
 
@@ -59,7 +61,7 @@ class TemporalCache:
             for log in self.__cache[timestamp]:
                 logs.append(log)
         return logs
-    
+
     def get_all_logs(self) -> list[LogEntry]:
         """Obtiene todos los logs almacenados en el cache.
 
@@ -74,7 +76,7 @@ class TemporalCache:
         for timestamp in self.__cache:
             logs.extend(self.__cache[timestamp])
         return logs
-        
+
     def prune_cache(self) -> list[LogEntry]:
         """Ejecuta la limpieza del cache eliminando logs antiguos.
 
