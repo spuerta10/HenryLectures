@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+  log-analyzer:
+    build:
+      context: ..  # root directory so it can access main.py file
+      dockerfile: docker/Dockerfile.local
+    ports:
+      - 80:80
+    environment:
+      - RUNENV=local
+    networks:
+      - log-analyzer-network
+
+  postgres:
+    image: postgres:14-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - ~/apps/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=admin
+      - POSTGRES_DB=citizix_dbzzz
+    networks:
+      - log-analyzer-network
+
+networks:
+  log-analyzer-network:
+    driver: bridge
+
