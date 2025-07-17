@@ -10,17 +10,16 @@ from src.routers.client import router as client_router
 from src.routers.order import router as order_router
 from src.routers.product import router as product_router
 
-if __name__ == "__main__":
-    DataBase.connect(r"data/dataset_tienda.json")
+DataBase.connect(r"data/dataset_tienda.json")
 
-    app = FastAPI()
-    app.openapi = lambda: custom_openapi(app)
-    app.include_router(auth_router, prefix="/api/v1")
-    app.include_router(client_router, prefix="/api/v1")
-    app.include_router(order_router, prefix="/api/v1")
-    app.include_router(product_router, prefix="/api/v1")
+app = FastAPI()
+app.openapi = lambda: custom_openapi(app)
+app.include_router(auth_router, prefix="/api/v1")
+app.include_router(client_router, prefix="/api/v1")
+app.include_router(order_router, prefix="/api/v1")
+app.include_router(product_router, prefix="/api/v1")
 
-    handler = Mangum(app)
+handler = Mangum(app)
 
-    if getenv("RUNENV", "") == "gcp":
-        uvicorn.run(app, host="0.0.0.0", port=int(getenv("PORT", "80")))  # noqa
+if getenv("RUNENV", "") == "gcp":
+    uvicorn.run(app, host="0.0.0.0", port=int(getenv("PORT", "80")))  # noqa
