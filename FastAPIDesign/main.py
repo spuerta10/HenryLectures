@@ -1,5 +1,8 @@
+from os import getenv
+
 import uvicorn
 from fastapi import FastAPI
+from mangum import Mangum
 from src.database import DataBase
 from src.docs.swagger import custom_openapi
 from src.routers.auth import router as auth_router
@@ -16,4 +19,8 @@ if __name__ == "__main__":
     app.include_router(client_router, prefix="/api/v1")
     app.include_router(order_router, prefix="/api/v1")
     app.include_router(product_router, prefix="/api/v1")
-    uvicorn.run(app, host="0.0.0.0")  # noqa
+
+    handler = Mangum(app)
+
+    if getenv("RUNENV") == "gcp":
+        uvicorn.run(app, host="0.0.0.0", port=int(getenv("PORT", "80")))  # noqa
