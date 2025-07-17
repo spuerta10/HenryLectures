@@ -22,5 +22,5 @@ if __name__ == "__main__":
 
     handler = Mangum(app)
 
-    if getenv("RUNENV") == "gcp":
+    if getenv("RUNENV", "") == "gcp":
         uvicorn.run(app, host="0.0.0.0", port=int(getenv("PORT", "80")))  # noqa

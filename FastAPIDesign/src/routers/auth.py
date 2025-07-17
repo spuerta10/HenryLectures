@@ -27,7 +27,7 @@ def authenticate_user(email: str, password: str) -> Any | None:
 
 
 # Crear el token JWT
-def create_access_token(data: dict, expires_delta: timedelta) -> Any[str]:
+def create_access_token(data: dict, expires_delta: timedelta) -> Any:
     to_encode = data.copy()
     expire = datetime.utcnow() + expires_delta
     to_encode.update({"exp": expire})
