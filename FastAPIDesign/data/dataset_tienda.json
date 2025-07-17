@@ -1,0 +1,68 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Vela aromática de lavanda",
+      "descripcion": "Vela de cera de soja con esencia de lavanda",
+      "categoria": "velas",
+      "precio": 1200.5,
+      "stock": 15
+    },
+    {
+      "id": 2,
+      "nombre": "Jabón artesanal de romero",
+      "descripcion": "Jabón natural con aceite esencial de romero",
+      "categoria": "jabones",
+      "precio": 850.0,
+      "stock": 30
+    },
+    {
+      "id": 3,
+      "nombre": "Maceta cerámica blanca",
+      "descripcion": "Maceta artesanal de cerámica blanca esmaltada",
+      "categoria": "macetas",
+      "precio": 2500.0,
+      "stock": 10
+    }
+  ],
+  "clientes": [
+    {
+      "id": 1,
+      "nombre": "Lucía Fernández",
+      "email": "lucia.fernandez@mail.com",
+      "telefono": "1155551234"
+    },
+    {
+      "id": 2,
+      "nombre": "Martín Ruiz",
+      "email": "martin.ruiz@mail.com",
+      "telefono": "1166664321"
+    }
+  ],
+  "ordenes": [
+    {
+      "id": 1,
+      "cliente_id": 1,
+      "producto_id": 2,
+      "cantidad": 2,
+      "total": 1700.0,
+      "fecha": "2025-06-25"
+    },
+    {
+      "id": 2,
+      "cliente_id": 2,
+      "producto_id": 1,
+      "cantidad": 1,
+      "total": 1200.5,
+      "fecha": "2025-06-26"
+    }
+  ],
+  "usuarios" : {
+    "cliente1@mail.com": {
+        "id": 1,
+        "nombre": "Lucía Fernández",
+        "email": "cliente1@mail.com",
+        "password": "123456"
+    }
+  }
+}
