@@ -83,7 +83,7 @@ Crea un script SQL y en el utiliza CREATE DATABASE para crea la base de datos `s
 Crea un nuevo script SQL y en el utiliza CREATE TABLE para crear cada una de las tablas solicitadas.
 
 ## 4. Carga la tabla landing
-Crea un nuevo script SQL para poder cargar la tabla lading con la informacion contenida por el archivo [logs.jsonl]().
+Crea un nuevo script SQL para poder cargar la tabla lading con la informacion contenida por el archivo [logs.jsonl](https://github.com/spuerta10/HenryLectures/blob/main/IntroSQL/data/logs.jsonl).
 
 ## 5. Transforma y carga los datos
 Crea un nuevo script SQL para transformar y cargar las demas tablas con los datos con el formato adecuado.
