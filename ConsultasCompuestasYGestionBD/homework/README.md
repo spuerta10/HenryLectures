@@ -41,7 +41,7 @@ Ahora migremos del pipeline en Python a la base de datos los metodos encargados 
 **IMPORTANTE:** Recuerda implementar las validaciones respectivas. Un ejemplo de estas seria validar que el sensor dado si exista.
 
 # 1. Pre-requisito
-Ten presente que para realizar esta tarea tienes que tener activa la base de datos sensors_logs_db y pobladas las tablas sensors, event_types y sensor_events. En la carpeta [src/db/scripts]() tienes scripts de SQL que realizan las tareas mencionadas para el motor de bases de datos **PostgreSQL**. 
+Ten presente que para realizar esta tarea tienes que tener activa la base de datos sensors_logs_db y pobladas las tablas sensors, event_types y sensor_events. En la carpeta [src/db/scripts](https://github.com/spuerta10/HenryLectures/tree/main/ConsultasCompuestasYGestionBD/src/db/scripts) tienes scripts de SQL que realizan las tareas mencionadas para el motor de bases de datos **PostgreSQL**. 
 
 # 2. Crea un script SQL
 Crea un script SQL para almacenar la creacion de los procedimientos almacenados requeridos. 
