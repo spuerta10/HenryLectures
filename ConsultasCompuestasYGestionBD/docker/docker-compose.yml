@@ -8,6 +8,6 @@ services:
       POSTGRES_DB: sensors_logs_db
     volumes:
       - ../src/db/scripts:/docker-entrypoint-initdb.d
-      - ../data:/data  # mount local folder with json
+      - ../homework/data:/data  # mount local folder with json
     ports:
       - "5432:5432"
