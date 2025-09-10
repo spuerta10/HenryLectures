@@ -1,3 +1,5 @@
+\c sensors_logs_db;
+
 -- poblar tabla event_types con los tipos de eventos únicos
 INSERT INTO event_types (event_name)
 SELECT DISTINCT raw_payload->>'event_type'

@@ -1,4 +1,4 @@
---\c sensors_logs_db;  -- connect to the database
+\c sensors_logs_db;
 
 -- Tabla de aterrizaje (landing table)
 -- Aquí llega el JSON sin transformar
